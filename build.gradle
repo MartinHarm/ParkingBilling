@@ -1,0 +1,50 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id "org.flywaydb.flyway" version "8.5.13"
+    id 'java'
+}
+
+group = 'ee.parking'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '14'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+	implementation 'junit:junit:4.13.1'
+    runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'org.flywaydb:flyway-gradle-plugin:3.0'
+    implementation 'org.flywaydb:flyway-core:8.5.13'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.xhtmlrenderer:flying-saucer-pdf:9.1.22'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+	compileOnly 'org.xhtmlrenderer:flying-saucer-pdf:9.1.22'
+
+}
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/parkingbilling'
+    user = 'postgres'
+    password = 'postgres'
+}
+
+test {
+    useJUnitPlatform()
+}

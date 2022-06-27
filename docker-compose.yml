@@ -1,0 +1,10 @@
+version: "3.16"
+services:
+  parkingbilling-db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=parkingbilling
+    ports:
+      - "5432:5432"
