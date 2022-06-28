@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/customer.model';
 import { CustomerService } from 'src/app/services/customer.service';
+import {CustomerReport} from "../../models/customer-report.model";
 
 @Component({
   selector: 'app-customer-list',
@@ -13,6 +14,8 @@ export class CustomerListComponent implements OnInit {
   currentCustomer: Customer = {};
   name = '';
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+
+  customerReport?:  CustomerReport;
 
   customer: Customer = {
     id: "1",
@@ -32,7 +35,6 @@ export class CustomerListComponent implements OnInit {
       .subscribe(
         data => {
           this.customers = data;
-          console.log(data);
         },
         error => {
           console.log(error);
@@ -44,7 +46,10 @@ export class CustomerListComponent implements OnInit {
   setActiveCustomer(customer: Customer, index: number): void {
     this.currentCustomer = customer;
 
-    this.customerService
+    this.customerService.getCustomerReport(customer.id).subscribe(customerReport => {
+      console.log(customerReport);
+      this.customerReport = customerReport;
+    })
   }
 
 
