@@ -35,7 +35,7 @@ export class CustomerListComponent implements OnInit {
 
   setActiveCustomer(customer: Customer, index: number): void {
     this.currentCustomer = customer;
-    this.customerService.getCustomerReport(1).subscribe(response => {
+    this.customerService.getCustomerReport(customer.id).subscribe(response => {
         this.customerReport = response;
       },
       error => {
