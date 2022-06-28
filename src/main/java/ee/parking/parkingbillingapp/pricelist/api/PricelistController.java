@@ -6,8 +6,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PricelistController {
 
-    @GetMapping("hello")
-    public String hello() {
-        return "invoice";
-    }
+    //TODO: GET currently active pricelist for facility maybe?
 }
