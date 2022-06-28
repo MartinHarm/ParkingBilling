@@ -35,17 +35,20 @@ export class CustomerListComponent implements OnInit {
 
   setActiveCustomer(customer: Customer, index: number): void {
     this.currentCustomer = customer;
-
-    this.customerService.getCustomerReport(customer.id).subscribe(customerReport => {
-      console.log(customerReport);
-      this.customerReport = customerReport;
-    })
+    this.customerService.getCustomerReport(1).subscribe(response => {
+        this.customerReport = response;
+      },
+      error => {
+        console.log(error);
+      });
   }
+
+
 
 
 
   generateInvoice(customerId: number) {
     this.customerService.generatePdfInvoice(customerId)
-  };
+  }
 
 }

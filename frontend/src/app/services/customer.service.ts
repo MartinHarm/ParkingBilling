@@ -14,17 +14,17 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Customer[]> {
-    return this.http.get<Customer[]>("https://localhost:8443/customer", { headers: {
-        "Authorization": "Basic " + btoa(  "user:user" )
+    return this.http.get<Customer[]>('https://localhost:8443/customer', { headers: {
+       "Authorization": "Basic " + btoa(  "user:user" )
       }});
   }
 
   generatePdfInvoice(customerId: number): void {
-    window.location.assign('https://localhost:8443/invoice/generate/' + customerId);
+    window.location.assign(`https://localhost:8443/invoice/generate/${customerId}`);
   }
 
   getCustomerReport(customerId: number): Observable<CustomerReport> {
-    return this.http.get<CustomerReport>("https://localhost:8443/customer", { headers: {
+    return this.http.get<CustomerReport>(`https://localhost:8443/report/${customerId}`, { headers: {
         "Authorization": "Basic " + btoa(  "user:user" )
       }});
   }
