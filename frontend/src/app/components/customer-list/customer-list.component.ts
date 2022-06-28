@@ -12,17 +12,7 @@ export class CustomerListComponent implements OnInit {
 
   customers?: Customer[];
   currentCustomer: Customer = {};
-  name = '';
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-
   customerReport?:  CustomerReport;
-
-  customer: Customer = {
-    id: "1",
-    firstName: "",
-    lastName: "",
-
-  };
 
   constructor(private customerService: CustomerService) { }
 
