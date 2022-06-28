@@ -3,6 +3,7 @@ package ee.parking.parkingbillingapp.usecase.invoice.service;
 import ee.parking.parkingbillingapp.usecase.report.model.Report;
 import ee.parking.parkingbillingapp.usecase.report.service.ReportRowService;
 import org.springframework.stereotype.Service;
+
 import java.util.HashMap;
 import java.util.Map;
 

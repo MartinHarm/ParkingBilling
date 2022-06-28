@@ -1,7 +1,6 @@
 package ee.parking.parkingbillingapp.usecase.report.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

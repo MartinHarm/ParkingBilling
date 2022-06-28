@@ -1,14 +1,15 @@
 package ee.parking.parkingbillingapp.usecase.report.api;
 
-import ee.parking.parkingbillingapp.usecase.invoice.api.InvoiceController;
 import ee.parking.parkingbillingapp.usecase.report.model.Report;
-import ee.parking.parkingbillingapp.usecase.report.model.ReportQuery;
 import ee.parking.parkingbillingapp.usecase.report.service.ReportRowService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "/report")

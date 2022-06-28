@@ -5,7 +5,6 @@ import ee.parking.parkingbillingapp.customer.service.CustomerService;
 import ee.parking.parkingbillingapp.usecase.parkinglog.model.ParkingLog;
 import ee.parking.parkingbillingapp.usecase.parkinglog.model.ParkingLogDTO;
 import ee.parking.parkingbillingapp.usecase.parkinglog.repository.ParkingLogRepository;
-import ee.parking.parkingbillingapp.usecase.report.api.ReportController;
 import ee.parking.parkingbillingapp.usecase.report.service.ReportRowService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

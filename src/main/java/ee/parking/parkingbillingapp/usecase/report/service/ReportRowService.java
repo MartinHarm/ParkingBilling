@@ -67,7 +67,6 @@ public class ReportRowService {
 
         Report report = reportRepository.findByCustomerId(customer.getId());
 
-
         if (report == null) {
             report = new Report();
             report.setCustomerId(customer.getId());
